@@ -9,15 +9,15 @@ pipeline {
     environment {
         APP_NAME = 'demoapp-0.0.1-SNAPSHOT.jar'
         REMOTE_APP_DIR = '/opt/demoapp'
-        REMOTE_SERVER_IP = 'YOUR_REMOTE_SERVER_IP'
-        REMOTE_SSH_USER = 'your_ssh_username'
+        REMOTE_SERVER_IP = '192.168.1.50'
+        REMOTE_SSH_USER = 'stack'
     }
 
     stages {
         stage('Checkout Source Code') {
             steps {
                 echo 'Checking out source code from Git...'
-                git credentialsId: 'your-github-credentials-id', branch: 'main', url: 'https://github.com/your-github-username/your-repo-name.git'
+                git credentialsId: 'github-cred', branch: 'main', url: 'https://github.com/RJyilmaz/java_app.git'
             }
         }
 
