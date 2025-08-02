@@ -15,6 +15,11 @@ public class DemoApplication {
 
     @GetMapping("/")
     public String hello() {
-        return "Merhaba Jenkins CI/CD Projesi! Uygulama v.0.0.1";
+        return "CI/CD Project with Java";
+    }
+    
+    @GetMapping("/health")
+    public String health() {
+        return "OK";
     }
 }

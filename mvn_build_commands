@@ -1,0 +1,8 @@
+#Normal Build:
+mvn clean package
+
+#Docker İmajı Oluşturma:
+mvn compile jib:build
+
+#CI/CD için Optimize Build:
+mvn clean package -Pci-cd
