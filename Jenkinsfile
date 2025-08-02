@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     environment {
-        APP_NAME = 'demoapp-0.0.1-SNAPSHOT.jar'
+        APP_NAME = 'demoapp.jar'
         REMOTE_APP_DIR = '/opt/demoapp'
-        DOCKER_IMAGE = 'maven:3.8.8-amazoncorretto-17'
+        DOCKER_IMAGE = 'maven:3.8.3-openjdk-17'
         SSH_CREDENTIALS_ID = 'remote-ssh-cred'
-        REMOTE_SERVER_IP = '192.168.1.50'  // Gerçek IP ile değiştirin
-        REMOTE_SSH_USER = 'deploy-user'    // Gerçek kullanıcı ile değiştirin
+        REMOTE_SERVER_IP = '192.168.1.50'
+        REMOTE_SSH_USER = 'stack'
     }
 
     stages {

@@ -6,3 +6,8 @@ mvn compile jib:build
 
 #CI/CD için Optimize Build:
 mvn clean package -Pci-cd
+
+
+docker run --rm -v "$(pwd)":/app -v "$HOME/.m2":/root/.m2 \
+  -w /app maven:3.8.3-openjdk-17 \
+  mvn clean install
